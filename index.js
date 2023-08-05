@@ -8,6 +8,7 @@ const TransactionMiner = require('./app/transaction-miner')
 const path = require('path')
 const cors = require('cors')
 const PubSubWithPubNub = require('./app/pubnub')
+const app = express()
 
 const isDevelopment = process.env.ENV === 'development'
 
@@ -51,7 +52,6 @@ const REALTIME_PLATFORM = process.env.REALTIME_PLATFORM || 'redis'
     pubsub
   })
 
-  const app = express()
   app.use(express.json())
   app.use(express.static(path.join(__dirname, 'client', 'dist')))
   app.use(cors())
@@ -215,3 +215,5 @@ const REALTIME_PLATFORM = process.env.REALTIME_PLATFORM || 'redis'
     }
   })
 })()
+
+module.exports = app
