@@ -204,16 +204,16 @@ const REALTIME_PLATFORM = process.env.REALTIME_PLATFORM || 'redis'
   //   }
   // }
 
-  const PORT =
-    process.env.PEER === 'true'
-      ? DEFAULT_PORT + Math.ceil(Math.random() * 1000)
-      : DEFAULT_PORT
-  app.listen(PORT, async () => {
-    console.log(`listening on localhost:${PORT}`)
-    if (PORT !== DEFAULT_PORT) {
-      await syncChains()
-    }
-  })
+  // const PORT =
+  //   process.env.PEER === 'true'
+  //     ? DEFAULT_PORT + Math.ceil(Math.random() * 1000)
+  //     : DEFAULT_PORT
+  // app.listen(PORT, async () => {
+  //   console.log(`listening on localhost:${PORT}`)
+  //   if (PORT !== DEFAULT_PORT) {
+  //     await syncChains()
+  //   }
+  // })
 })()
 
 module.exports = app
