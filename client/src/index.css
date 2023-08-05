@@ -3,13 +3,10 @@
   color: #fff;
   text-align: center;
   min-height: 100vh;
-}
-
-.App {
+  word-wrap: break-word;
   font-size: 20px;
   font-family: 'Quicksand';
   padding-top: 5%;
-  word-wrap: break-word;
 }
 
 .logo {
